@@ -9,6 +9,5 @@ router = APIRouter()
 
 @router.get("/")
 async def ping():
-    data = {"status": "200OK"}
-    json_compatible_item_data = jsonable_encoder(data)
+    json_compatible_item_data = jsonable_encoder({"ping": "pong!"})
     return JSONResponse(content=json_compatible_item_data)
